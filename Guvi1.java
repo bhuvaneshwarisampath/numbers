@@ -1,99 +1,34 @@
-package complxprint;
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package guvi;
 
 import java.util.Scanner;
 
-public class Complxprint {
+/**
+ *
+ * @author Student
+ */
+public class Guvi {
 
     
-    public static void main(String[] args) {
-
-        char c1,c2,c3;int pos,count=0,count1=0;
-        StringBuilder s = new StringBuilder("THHTHHH");
-        while(!"________".equals(s)) {
-            System.out.println(s);
-            for (int i=1;i<=s.length();i++)
-                System.out.print(i);
-            for (int i=0;i<s.length();i++)
-                while('H' == s.charAt(i))
-                    count=1;
-            while(count==0)
-                break;
-            count=0;
-
-            System.out.println("\nEnter the position to delete");
-            Scanner sc = new Scanner(System.in);
-            pos = sc.nextInt();
-            pos = pos - 1;
-
-            if (pos <= s.length())
-            {
-
-                if (s.charAt(pos) == 'T' || s.charAt(pos) == '_') {
-                    System.out.println("You are entered the tail position or already deleted position " +
-                            " Please enter the head position or unremoved position to remove");
-
-                } else {
-
-                    if (pos <= 0) {
-                        // System.out.println("check : "+pos);
-                        c1 = s.charAt(pos);
-                        c2 = s.charAt(pos + 1);
-                    } else if (pos >= s.length() - 1) {
-                        c1 = s.charAt(pos - 1);
-                        c2 = s.charAt(pos);
-                    } else {
-                        c1 = s.charAt(pos - 1);
-                        c2 = s.charAt(pos + 1);
-                    }
-
-
-                    switch (c1) {
-                        case 'H':
-                            s.setCharAt(getpos((pos - 1), s), 'T');
-                            break;
-                        case 'T':
-                            s.setCharAt(getpos((pos - 1), s), 'H');
-                            break;
-                    }
-                    switch (c2) {
-                        case 'H':
-                            s.setCharAt(getpos(pos + 1, s), 'T');
-                            break;
-                        case 'T':
-                            s.setCharAt(getpos(pos + 1, s), 'H');
-                            break;
-                    }
-                    s.setCharAt(pos, '_');
-                }
-
-            }
-            else
-            {
-                System.out.println("Please enter only available position to delete");
-            }
-
-        }
-        for (int i=0;i<s.length();i++)
-        {
-        if (s.charAt(i)=='_')
-            count1++;
-        }
-        if (count1==s.length())
-            System.out.println("\nCongrats..You Have Won the game");
-        else
-            System.out.println(count1+s.length()+"\nThere is no way.  You have to accept that you are failed");
-
+ public static void main(String ar[])throws Exception
+{
+    int n,i,j,k;
+    Scanner sc=new Scanner(System.in);
+    n=sc.nextInt();
+    k=sc.nextInt();
+int a[]=new int[100];
+for(i=0;i<n;i++)
+    a[i]=sc.nextInt();
+for(i=0;i<n;i++)
+{
+for(j=i+1;j<n;j++)
+{
+if(t==a[i]+a[j])
+    System.out.println(" sum of two elements to give a target elemets is:"+a[i]+"\t"+a[j]);
+}
 }
 
-
-    private static int getpos(int i,StringBuilder s) {
-            if(i<=0)
-                return 0;
-        else if (i>=s.length())
-                return i-1;
-        else
-                return i;
-
-    }
-} 
-      
+}}
